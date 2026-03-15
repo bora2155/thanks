@@ -26,7 +26,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 16px 40px;
+            padding: 0;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -39,15 +39,23 @@
             z-index: 9999;
         }
 
-        /* ── MAIN CARD ── */
         .card {
             width: 100%;
             max-width: 390px;
+            min-height: 100vh;
             background: var(--card);
-            border-radius: 28px;
-            padding: 28px 20px 24px;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08), 0 0 0 0.5px rgba(0,0,0,0.04);
+            border-radius: 0;
+            padding: 56px 20px 40px;
+            box-shadow: none;
             position: relative;
+        }
+        @media (min-width: 430px) {
+            body { padding: 20px 16px 40px; }
+            .card {
+                min-height: auto;
+                border-radius: 28px;
+                box-shadow: 0 2px 20px rgba(0,0,0,0.08), 0 0 0 0.5px rgba(0,0,0,0.04);
+            }
         }
 
         /* ── HEADER ── */

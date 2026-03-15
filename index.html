@@ -226,13 +226,13 @@
             line-height: 1.5;
             color: var(--text);
         }
-        /* 원근감: 위쪽 아이템일수록 멀어 보이게 */
-        .list-item:nth-child(1)  { transform: translateZ(0px);   opacity: 1;    }
-        .list-item:nth-child(2)  { transform: translateZ(-8px);  opacity: 0.97; }
-        .list-item:nth-child(3)  { transform: translateZ(-16px); opacity: 0.94; }
-        .list-item:nth-child(4)  { transform: translateZ(-24px); opacity: 0.91; }
-        .list-item:nth-child(5)  { transform: translateZ(-32px); opacity: 0.88; }
-        .list-item:nth-child(n+6){ transform: translateZ(-38px); opacity: 0.85; }
+        /* 원근감: 1번(최신)이 가장 가깝고 아래로 갈수록 멀어짐 */
+        .list-item:nth-child(1)  { transform: scale(1.00) translateZ(0px);   opacity: 1.00; }
+        .list-item:nth-child(2)  { transform: scale(0.97) translateZ(-20px); opacity: 0.95; }
+        .list-item:nth-child(3)  { transform: scale(0.94) translateZ(-40px); opacity: 0.90; }
+        .list-item:nth-child(4)  { transform: scale(0.91) translateZ(-60px); opacity: 0.85; }
+        .list-item:nth-child(5)  { transform: scale(0.88) translateZ(-80px); opacity: 0.80; }
+        .list-item:nth-child(n+6){ transform: scale(0.85) translateZ(-95px); opacity: 0.75; }
 
         @keyframes fadeSlide {
             from { opacity: 0; transform: translateY(10px) translateZ(0); }
